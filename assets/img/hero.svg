@@ -1,0 +1,19 @@
+<!-- PLACEHOLDER. Swap for a real 600×600 photograph or graphic (assets/img/hero.jpg),
+     then update the <img src> in index.html. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="presentation">
+  <rect width="600" height="600" fill="#F6F8F9"/>
+  <g stroke="#DFE4E8" stroke-width="1">
+    <path d="M0 150H600M0 300H600M0 450H600M150 0V600M300 0V600M450 0V600"/>
+  </g>
+  <path d="M60 470 L170 380 L250 425 L350 300 L440 340 L545 150"
+        fill="none" stroke="#204764" stroke-width="10"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#FFA200">
+    <circle cx="60" cy="470" r="14"/>
+    <circle cx="170" cy="380" r="14"/>
+    <circle cx="250" cy="425" r="14"/>
+    <circle cx="350" cy="300" r="14"/>
+    <circle cx="440" cy="340" r="14"/>
+    <circle cx="545" cy="150" r="18"/>
+  </g>
+</svg>
