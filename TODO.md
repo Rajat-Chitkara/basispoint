@@ -8,7 +8,7 @@ Every page hard-codes `https://thebasispoint.in` in its canonical URL, Open Grap
 `robots.txt` and `sitemap.xml`. Those are correct only once the domain points at the
 deployment.
 
-`sales@thebasispoint.in` is the only contact route on the site — nav, footer, the services
+`rajat@thebasispoint.in` is the only contact route on the site — nav, footer, the services
 enquiry link, and the corrections link on the methodology page. **It must be receiving mail
 before launch**, or every enquiry bounces silently.
 
