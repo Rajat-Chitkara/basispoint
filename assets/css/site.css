@@ -99,39 +99,33 @@ img{display:block;max-width:100%}
 .nav-toggle[aria-expanded="true"] span:not(.sr-only)::after{top:0;transform:rotate(-45deg)}
 
 /* ═══ HERO ═══
-   The hero carries the headline only. The chart below it is a real figure
-   from Issue 01, so it gets a figure's treatment rather than decoration:
-   full width, captioned, sourced. The card is pulled up into the navy band
-   so the two read as one unit. */
-.hero{background:var(--navy);position:relative;padding-bottom:110px}
-.hero-in{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-.hero-copy{max-width:720px;padding:78px 0 0}
+   Two columns: headline left, a real figure from Issue 01 right. The figure
+   sits inside the hero at a fixed column width so it stays a supporting
+   element, not a section of its own. */
+.hero{background:var(--navy)}
+.hero-in{max-width:var(--max);margin:0 auto;padding:60px var(--pad);
+  display:grid;grid-template-columns:minmax(0,1fr) 500px;gap:56px;align-items:center}
+.hero-copy{min-width:0}
 .hero-kicker{font-size:13px;font-weight:600;letter-spacing:1.6px;color:rgba(255,255,255,.72);
   margin-bottom:14px;text-transform:uppercase}
-.hero-h1{font-family:var(--slab);font-size:clamp(34px,4.6vw,58px);font-weight:700;
-  color:#fff;line-height:1.08;letter-spacing:-.5px}
+.hero-h1{font-family:var(--slab);font-size:clamp(32px,3.7vw,48px);font-weight:700;
+  color:#fff;line-height:1.1;letter-spacing:-.5px}
 .hero-h1 .amber{color:var(--amber)}
-.hero-sub{font-size:16.5px;line-height:1.7;color:rgba(255,255,255,.8);margin-top:20px;max-width:560px}
-.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.hero-sub{font-size:16px;line-height:1.7;color:rgba(255,255,255,.8);margin-top:18px;max-width:480px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
 
-/* ═══ HERO FIGURE ═══ */
-.hero-fig{background:var(--offwhite);position:relative}
-.hero-fig-in{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-.figcard{background:var(--white);border:1px solid var(--rule);border-radius:8px;
-  padding:26px 30px 22px;margin-top:-90px;box-shadow:0 18px 40px rgba(11,32,48,.16)}
+/* Figure card inside the hero */
+.figcard{background:var(--white);border-radius:10px;padding:16px 18px 14px;
+  box-shadow:0 16px 38px rgba(0,0,0,.24);min-width:0}
 .figcard-top{display:flex;align-items:baseline;justify-content:space-between;
-  gap:16px;flex-wrap:wrap;margin-bottom:16px}
-.figcard-lbl{font-size:11.5px;font-weight:700;letter-spacing:1.5px;
+  gap:10px;margin-bottom:10px}
+.figcard-lbl{font-size:10.5px;font-weight:700;letter-spacing:1.3px;
   color:var(--amber-text);text-transform:uppercase}
-.figcard-src{font-size:12px;color:var(--muted)}
-.figcard-img{border-top:1px solid var(--rule);padding-top:20px;overflow-x:auto}
-.figcard-img img{width:100%;min-width:520px;height:auto}
-.figcard-cap{font-size:14.5px;line-height:1.65;color:var(--body);
-  margin-top:18px;max-width:760px}
+.figcard-src{font-size:10.5px;color:var(--muted)}
+.figcard-img{border-top:1px solid var(--rule);padding-top:12px}
+.figcard-img img{width:100%;height:auto}
+.figcard-cap{font-size:12px;line-height:1.55;color:var(--body);margin-top:11px}
 .figcard-cap strong{color:var(--ink);font-weight:600}
-/* The chart keeps a 520px min-width and scrolls inside its own box, so the
-   page never scrolls sideways. Tell small screens that it scrolls. */
-.figcard-hint{display:none;font-size:12px;color:var(--muted);margin-top:10px}
 
 /* ═══ BUTTONS ═══ */
 .btn-amber{background:var(--amber);color:var(--ink);font-size:13.5px;font-weight:600;
@@ -298,6 +292,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,.72);padding:54px var(
 
 /* ═══ RESPONSIVE ═══ */
 @media(max-width:1080px){
+  .hero-in{grid-template-columns:minmax(0,1fr) 400px;gap:36px}
   .exp-grid{grid-template-columns:1fr 1fr}
   .steps-grid{grid-template-columns:repeat(3,1fr)}
   .ft-top{grid-template-columns:1.3fr 1fr 1fr;gap:34px}
@@ -313,12 +308,8 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,.72);padding:54px var(
   .nav-links>a:not(.btn-contact){padding:14px 0;border-bottom:1px solid var(--rule);font-size:16px}
   .nav-links>a:not(.btn-contact)[aria-current="page"]::after{display:none}
   .nav-links .btn-contact{margin-top:16px;padding:14px 24px;font-size:15px;width:100%}
-  .hero{padding-bottom:80px}
-  .hero-copy{max-width:100%;padding:52px 0 0}
-  .figcard{margin-top:-62px;padding:20px 18px 18px;border-radius:6px}
-  .figcard-img{padding-top:16px}
-  .figcard-cap{font-size:14px}
-  .figcard-hint{display:block}
+  .hero-in{grid-template-columns:1fr;gap:32px;padding:44px var(--pad) 48px}
+  .figcard{max-width:520px}
   .exp-grid,.srv-grid,.steps-grid{grid-template-columns:1fr}
   .cta-in{grid-template-columns:1fr;gap:30px}
   .ft-top{grid-template-columns:1fr;gap:32px}
@@ -336,8 +327,8 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,.72);padding:54px var(
 @media print{
   .nav,.nav-toggle,.cta,.skip{display:none!important}
   body{color:#000;background:#fff}
-  .hero,.hero-fig,.services,.page-head,footer{background:#fff!important;color:#000!important}
-  .figcard{box-shadow:none!important;margin-top:24px!important}
+  .hero,.services,.page-head,footer{background:#fff!important;color:#000!important}
+  .figcard{box-shadow:none!important;border:1px solid #ccc}
   .hero-h1,.sec-h2,.srv-h,.page-head h1{color:#000!important}
   .srv-p,.sec-sub,.page-head p,.ft-desc{color:#333!important}
   a[href^="http"]::after{content:" (" attr(href) ")";font-size:11px;color:#555}
