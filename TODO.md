@@ -18,11 +18,17 @@ If the domain changes, update it everywhere:
 grep -rn "thebasispoint.in" . --include=*.html --include=*.xml --include=*.txt
 ```
 
-## 2. Hero image
+## 2. Hero image — interim
 
-`assets/img/hero.svg` is an abstract chart graphic. You said you'd supply a real image —
-drop it in as `assets/img/hero.jpg` (600×600, square crop) and change the one `<img src>`
-in `index.html`. It is decorative (`alt=""`), so no alt text is needed.
+`assets/img/hero.png` is Figure 4 from Issue 01 (effective IEA rate vs passive share),
+cropped square from the PDF. It's real work rather than stock, so it can ship as-is.
+
+When you have the image you want: drop it in at 600×600 and point the one `<img src>` in
+`index.html` at it. It is decorative (`alt=""`), so no alt text is needed.
+
+Regenerating the current crop, if ever needed: extract page 8's embedded image from the
+report PDF, crop to `(205, 98, 900, 500)`, pad to square on `#FDFDFD`, resize to 600×600.
+Tighter crops pull in clipped axis labels — the surrounding whitespace is deliberate.
 
 ---
 
